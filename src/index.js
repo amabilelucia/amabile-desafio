@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+require("halfmoon/css/halfmoon-variables.min.css");
+const halfmoon = require("halfmoon");
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -11,3 +13,4 @@ root.render(
   </React.StrictMode>
 );
 reportWebVitals();
+halfmoon.onDOMContentLoaded();
