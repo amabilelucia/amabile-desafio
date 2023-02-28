@@ -17,9 +17,11 @@ const Get = () => {
   useEffect(() => {
     getAllDados();
   }, []);
-  if(carregando === false){
-    return dados
+  if (carregando) {
+    return null;
   }
+
+  return dados;
 };
 
 export {Get}
