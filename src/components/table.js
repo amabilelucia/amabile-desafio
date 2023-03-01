@@ -41,15 +41,38 @@ function corpo(object) {
 }
 
 class Table extends React.Component {
+  state = {
+    pesquisa: "",
+  };
+
+  buscarEvento = (event) => {
+    this.setState({ pesquisa: event.target.value });
+  };
+
   render() {
     const lista = this.props.objectList;
+    let listaFiltrada = null;
+    if (lista) {
+      listaFiltrada = lista.filter((item) =>
+        Object.values(item)
+          .join(" ")
+          .toLowerCase()
+          .includes(this.state.pesquisa.toLowerCase())
+      );
+    }
     return (
       <div>
-        <table className="table table-bordered">
+        <span>Buscar: </span>
+        <input
+          type="text"
+          onChange={this.buscarEvento}
+          value={this.state.pesquisa}
+        />
+        <table className="table table-bordered table-striped">
           <thead>
             <tr>{cabecalho(lista)}</tr>
           </thead>
-          <tbody>{corpo(lista)}</tbody>
+          <tbody>{corpo(listaFiltrada)}</tbody>
         </table>
       </div>
     );
