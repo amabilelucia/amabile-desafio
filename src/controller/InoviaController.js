@@ -24,4 +24,12 @@ const Get = () => {
   return dados;
 };
 
-export {Get}
+const Delete = async (id) => {
+  try {
+    await fetch("http://inovia.eastus.cloudapp.azure.com/api/person/" + id, {method: 'DELETE'});
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export {Get, Delete}

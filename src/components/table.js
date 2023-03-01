@@ -1,11 +1,14 @@
 import React from "react";
+import { Delete } from "../controller/InoviaController";
 
 function cabecalho(object) {
   if (!object) {
     return;
   }
   const keys = Object.keys(object[0]);
-  return keys.map((key) => <th key={key}>{key}</th>);
+  let cabecalhoList = keys.map((key) => <th key={key}>{key}</th>);
+  cabecalhoList.push(<th>Excluir</th>);
+  return cabecalhoList;
 }
 
 function corpo(object) {
@@ -36,9 +39,19 @@ function corpo(object) {
       <td>{item.vehicle}</td>
       <td>{item.domain}</td>
       <td>{item.occupation}</td>
+      <td>
+        <button type="submit" onClick={() => excluir(item.id)}>
+          excluir
+        </button>
+      </td>
     </tr>
   ));
 }
+
+function excluir(id) {
+  Delete(id);
+}
+
 
 class Table extends React.Component {
   state = {
