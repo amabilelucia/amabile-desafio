@@ -1,28 +1,46 @@
 import React from "react";
 import "./map.css";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-const position = [51.505, -0.09];
+function marcar(lista) {
+  if (!lista) {
+    return;
+  }
+  const listaFiltrada = lista.map((item) => {
+    if (!item.latitude || !item.longitude || !item.givenName || !item.surname) {
+      return null;
+    }
+
+    if (isNaN(item.latitude) || isNaN(item.longitude)) {
+      return null;
+    }
+    return (
+      <Marker position={[item.latitude, item.longitude]}>
+        <Popup>
+          {item.givenName + " " + item.surname}
+        </Popup>
+      </Marker>
+    );
+  });
+  return listaFiltrada
+}
 
 export default class Map extends React.Component {
   render() {
+    const lista = this.props.objectList;
     return (
       <div>
         <MapContainer
-          center={[51.505, -0.09]}
-          zoom={13}
-          scrollWheelZoom={false}
+          center={[-22.92758, -47.071317]}
+          zoom={6}
+          scrollWheelZoom={true}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[51.505, -0.09]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
+          {marcar(lista)}
         </MapContainer>
       </div>
     );

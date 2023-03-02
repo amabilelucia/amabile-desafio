@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       {/* <Table objectList={Get()}></Table> */}
       {/* <Graphic objectList={Get()}></Graphic> */}
-      <Map></Map>
+      <Map objectList={Get()}></Map>
     </div>
   );
 }
