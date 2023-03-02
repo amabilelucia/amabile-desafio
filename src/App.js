@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       {/* <Table objectList={Get()}></Table> */}
-      <Graphic></Graphic>
+      <Graphic objectList={Get()}></Graphic>
     </div>
   );
 }
