@@ -1,16 +1,23 @@
-import './App.css';
-import Graphic from './components/graphic';
-import Map from './components/map';
-import Table from './components/table';
-import {Get} from './controller/InoviaController';
+import "./App.css";
+import Graphic from "./components/graphic";
+import Header from "./components/header";
+import Map from "./components/map";
+import Table from "./components/table";
+import { Get } from "./controller/InoviaController";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <div className="App">
-      {/* <Table objectList={Get()}></Table> */}
-      {/* <Graphic objectList={Get()}></Graphic> */}
-      <Map objectList={Get()}></Map>
+      <div className="page">
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Table objectList={Get()} />} path="/" />
+            <Route element={<Graphic objectList={Get()}/>} path="/graphic" />
+            <Route element={<Map objectList={Get()}/>} path="/map" />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

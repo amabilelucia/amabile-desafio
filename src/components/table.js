@@ -1,5 +1,6 @@
 import React from "react";
 import { Delete } from "../controller/InoviaController";
+import Header from "./header";
 
 function cabecalho(object) {
   if (!object) {
@@ -75,6 +76,7 @@ class Table extends React.Component {
     }
     return (
       <div>
+        <Header></Header>
         <span>Buscar: </span>
         <input
           type="text"

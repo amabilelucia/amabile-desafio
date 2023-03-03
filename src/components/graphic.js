@@ -1,5 +1,6 @@
 import React from "react";
 import Plot from "react-plotly.js";
+import Header from "./header";
 
 function criarTabela(values, labels, titulo) {
   return (
@@ -50,6 +51,7 @@ export default class Graphic extends React.Component {
 
     return (
       <div>
+        <Header></Header>
         {dadosTabela("gender", lista)}
         {dadosTabela("bloodType", lista)}
       </div>

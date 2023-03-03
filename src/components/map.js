@@ -2,6 +2,7 @@ import React from "react";
 import "./map.css";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import Header from "./header";
 
 function marcar(lista) {
   if (!lista) {
@@ -17,13 +18,11 @@ function marcar(lista) {
     }
     return (
       <Marker position={[item.latitude, item.longitude]}>
-        <Popup>
-          {item.givenName + " " + item.surname}
-        </Popup>
+        <Popup>{item.givenName + " " + item.surname}</Popup>
       </Marker>
     );
   });
-  return listaFiltrada
+  return listaFiltrada;
 }
 
 export default class Map extends React.Component {
@@ -31,17 +30,20 @@ export default class Map extends React.Component {
     const lista = this.props.objectList;
     return (
       <div>
-        <MapContainer
-          center={[-22.92758, -47.071317]}
-          zoom={6}
-          scrollWheelZoom={true}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {marcar(lista)}
-        </MapContainer>
+        <Header></Header>
+        <div>
+          <MapContainer
+            center={[-22.92758, -47.071317]}
+            zoom={6}
+            scrollWheelZoom={true}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {marcar(lista)}
+          </MapContainer>
+        </div>
       </div>
     );
   }
