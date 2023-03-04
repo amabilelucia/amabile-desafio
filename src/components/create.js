@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Post } from "../controller/InoviaController";
 import Header from "./header";
 
 function fazerPost(e, dadosPost) {
   e.preventDefault();
   console.log(dadosPost);
+  Post(dadosPost)
 }
 
 export default () => {
@@ -11,7 +13,7 @@ export default () => {
   const [nameSet, setNameSet] = useState("");
   const [title, setTitle] = useState("");
   const [givenName, setGivenName] = useState("");
-  const [middleName, setMiddleName] = useState("");
+  const [middleInitial, setMiddleInitial] = useState("");
   const [surname, setSurname] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
   const [city, setCity] = useState("");
@@ -26,7 +28,7 @@ export default () => {
     nameSet: nameSet,
     title: title,
     givenName: givenName,
-    middleName: middleName,
+    middleInitial: middleInitial,
     surname: surname,
     streetAddress: streetAddress,
     city: city,
@@ -49,79 +51,79 @@ export default () => {
           }}
         >
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="Gender"
             onChange={(e) => setGender(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="name set"
             onChange={(e) => setNameSet(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="title"
             onChange={(e) => setTitle(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="Given name"
             onChange={(e) => setGivenName(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="Middle name"
-            onChange={(e) => setMiddleName(e.target.value)}
+            onChange={(e) => setMiddleInitial(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="Surname"
             onChange={(e) => setSurname(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="streetAddress"
             onChange={(e) => setStreetAddress(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="City"
             onChange={(e) => setCity(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="State"
             onChange={(e) => setState(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="State Full"
             onChange={(e) => setStateFull(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="Birthday"
             onChange={(e) => setBirthday(e.target.value)}
           />
           <input
-            className="input"
+            className="form-control"
             type="text"
             placeholder="BrowserUserAgent"
             onChange={(e) => setBrowserUserAgent(e.target.value)}

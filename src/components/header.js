@@ -11,17 +11,17 @@ export default () => {
         <section className="button">
           {" "}
           <ul>
-            <button>
+            <button className="button">
               <Link to="/" className="text-link">
                 Home
               </Link>
             </button>
-            <button>
+            <button className="button">
               <Link to="/graphic" className="text-link">
                 Gráficos
               </Link>
             </button>
-            <button>
+            <button className="button">
               <Link to="/map" className="text-link">
                 Mapa
               </Link>

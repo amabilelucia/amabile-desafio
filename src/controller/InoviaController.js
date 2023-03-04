@@ -26,10 +26,25 @@ const Get = () => {
 
 const Delete = async (id) => {
   try {
-    await fetch("http://inovia.eastus.cloudapp.azure.com/api/person/" + id, {method: 'DELETE'});
+    await fetch("http://inovia.eastus.cloudapp.azure.com/api/person/" + id, {
+      method: "DELETE",
+    });
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-export {Get, Delete}
+const Post = async (data) => {
+  console.log("chegou no post: " + data);
+
+  try {
+    await fetch(
+      "http://inovia.eastus.cloudapp.azure.com/api/person/",
+      { method: "POST", body: JSON.stringify(data), headers: {"Content-type": "application/json; charset=UTF-8"}}
+    );
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { Get, Delete, Post };
