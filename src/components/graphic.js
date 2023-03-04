@@ -12,7 +12,7 @@ function criarTabela(values, labels, titulo) {
           type: "pie",
         },
       ]}
-      layout={{ width: 700, height: 400, title: titulo }}
+      layout={{ width: 450, height: 500, title: titulo }}
     />
   );
 }
@@ -44,7 +44,6 @@ function dadosTabela(titulo, listaDados) {
   return criarTabela(listaFiltradaValorPorcentagem, listaFiltradaChave, titulo);
 }
 
-
 export default class Graphic extends React.Component {
   render() {
     const lista = this.props.objectList;
@@ -52,9 +51,9 @@ export default class Graphic extends React.Component {
     return (
       <div>
         <Header></Header>
-        {dadosTabela("gender", lista)}
-        {dadosTabela("bloodType", lista)}
-      </div>
+          {dadosTabela("gender", lista)}
+          {dadosTabela("bloodType", lista)}
+        </div>
     );
   }
 }

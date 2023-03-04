@@ -16,7 +16,7 @@ function corpo(object) {
   if (!object) {
     return;
   }
-  return object.map((item) => (
+  return object.map ((item) => (
     <tr>
       <td>{item.id}</td>
       <td>{item.gender}</td>
@@ -53,7 +53,6 @@ function excluir(id) {
   Delete(id);
 }
 
-
 class Table extends React.Component {
   state = {
     pesquisa: "",
@@ -77,18 +76,21 @@ class Table extends React.Component {
     return (
       <div>
         <Header></Header>
-        <span>Buscar: </span>
-        <input
-          type="text"
-          onChange={this.buscarEvento}
-          value={this.state.pesquisa}
-        />
-        <table className="table table-bordered table-striped">
-          <thead>
-            <tr>{cabecalho(lista)}</tr>
-          </thead>
-          <tbody>{corpo(listaFiltrada)}</tbody>
-        </table>
+        <div>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Buscar"
+            onChange={this.buscarEvento}
+            value={this.state.pesquisa}
+          />
+          <table className="table table-bordered table-striped">
+            <thead>
+              <tr>{cabecalho(lista)}</tr>
+            </thead>
+            <tbody>{corpo(listaFiltrada)}</tbody>
+          </table>
+        </div>
       </div>
     );
   }

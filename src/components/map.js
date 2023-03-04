@@ -31,7 +31,7 @@ export default class Map extends React.Component {
     return (
       <div>
         <Header></Header>
-        <div>
+        <div className="container">
           <MapContainer
             center={[-22.92758, -47.071317]}
             zoom={6}

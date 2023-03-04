@@ -18,7 +18,7 @@ header{
   background-color: #272727;
   display:flex;
   gap: 0px 40px;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   padding: 0 10px;
 }
@@ -31,4 +31,10 @@ header{
 .text-link:hover {
   color: inherit;
   text-decoration: inherit;
+}
+
+.logo{
+  width: 150px;
+  height: 44px;
+  margin: 10px;
 }
