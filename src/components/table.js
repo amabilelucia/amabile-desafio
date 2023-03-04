@@ -1,6 +1,7 @@
 import React from "react";
 import { Delete } from "../controller/InoviaController";
 import Header from "./header";
+import { Link } from "react-router-dom";
 
 function cabecalho(object) {
   if (!object) {
@@ -16,7 +17,7 @@ function corpo(object) {
   if (!object) {
     return;
   }
-  return object.map ((item) => (
+  return object.map((item) => (
     <tr>
       <td>{item.id}</td>
       <td>{item.gender}</td>
@@ -77,6 +78,11 @@ class Table extends React.Component {
       <div>
         <Header></Header>
         <div>
+          <button>
+            <Link to="/create" className="text-link">
+              Create
+            </Link>
+          </button>
           <input
             type="text"
             className="form-control"

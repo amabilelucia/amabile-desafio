@@ -18,7 +18,9 @@ function marcar(lista) {
     }
     return (
       <Marker position={[item.latitude, item.longitude]}>
-        <Popup>{item.givenName + " " + item.surname}</Popup>
+        <Popup>
+          <span>{item.givenName + " " + item.surname}</span>
+        </Popup>
       </Marker>
     );
   });
