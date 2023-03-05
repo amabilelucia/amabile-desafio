@@ -47,4 +47,17 @@ const Post = async (data) => {
   }
 };
 
-export { Get, Delete, Post };
+const Put = async (data, id) => {
+  console.log("chegou no put: " + data);
+
+  try {
+    await fetch(
+      "http://inovia.eastus.cloudapp.azure.com/api/person/"+id,
+      { method: "PUT", body: JSON.stringify(data), headers: {"Content-type": "application/json; charset=UTF-8"}}
+    );
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { Get, Delete, Post, Put };

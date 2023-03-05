@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Post } from "../controller/InoviaController";
+import { Put } from "../controller/InoviaController";
 import Header from "./header";
 
-function fazerPost(e, dadosPost) {
+function fazerPut(e, dadosPut, id) {
   e.preventDefault();
-  console.log(dadosPost);
-  Post(dadosPost)
+  console.log(dadosPut);
+  Put(dadosPut, id)
 }
 
 export default () => {
+  const [id, setId] = useState("");
   const [gender, setGender] = useState("");
   const [nameSet, setNameSet] = useState("");
   const [title, setTitle] = useState("");
@@ -23,7 +24,7 @@ export default () => {
   const [birthday, setBirthday] = useState("");
   const [browserUserAgent, setBrowserUserAgent] = useState("");
 
-  const dadosPost = {
+  const dadosPut = {
     gender: gender,
     nameSet: nameSet,
     title: title,
@@ -43,13 +44,19 @@ export default () => {
     <div>
       <Header></Header>
       <div className="container">
-        <h1>Adicionar Dado</h1>
+        <h1>Modificar Dado</h1>
         <form
           className="form"
           onSubmit={(e) => {
-            fazerPost(e, dadosPost);
+            fazerPut(e, dadosPut, id);
           }}
         >
+          <input
+            className="form-control"
+            type="text"
+            placeholder="id"
+            onChange={(e) => setId(e.target.value)}
+          />
           <input
             className="form-control"
             type="text"

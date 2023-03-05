@@ -78,9 +78,14 @@ class Table extends React.Component {
       <div>
         <Header></Header>
         <div>
-          <button class="btn" type="button">
+          <button className="btn" type="button">
             <Link to="/create" className="text-link">
               Novo Dado
+            </Link>
+          </button>
+          <button className="btn" type="button">
+            <Link to="/put" className="text-link">
+              Modificar Dado
             </Link>
           </button>
           <input

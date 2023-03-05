@@ -6,6 +6,7 @@ import Table from "./components/table";
 import { Get } from "./controller/InoviaController";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Create from "./components/create";
+import Put from "./components/put";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route element={<Graphic objectList={Get()}/>} path="/graphic" />
             <Route element={<Map objectList={Get()}/>} path="/map" />
             <Route element={<Create></Create>} path="/create" />
+            <Route element={<Put></Put>} path="/put" />
           </Routes>
         </BrowserRouter>
       </div>
