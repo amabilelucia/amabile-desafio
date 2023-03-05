@@ -3,6 +3,17 @@ import "./map.css";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Header from "./header";
+import icone from "../img/icone-local.svg";
+import L from 'leaflet';
+
+const iconeM = L.icon({
+  iconUrl: icone,
+  iconSize:     [28, 54], 
+  shadowSize:   [50, 64], 
+  iconAnchor:   [22, 94], 
+  shadowAnchor: [4, 62], 
+  popupAnchor:  [-3, -76] 
+});
 
 function marcar(lista) {
   if (!lista) {
@@ -17,7 +28,7 @@ function marcar(lista) {
       return null;
     }
     return (
-      <Marker position={[item.latitude, item.longitude]}>
+      <Marker position={[item.latitude, item.longitude]} icon={iconeM}>
         <Popup>
           <span>{item.givenName + " " + item.surname}</span>
         </Popup>

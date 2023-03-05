@@ -7,7 +7,10 @@ export default () => {
   return (
     <div>
       <header>
-        <img src={logo} className="logo"></img>
+        <Link to="/">
+          <img src={logo} className="logo"></img>
+        </Link>
+
         <section className="button">
           {" "}
           <ul>
@@ -26,7 +29,13 @@ export default () => {
                 Mapa
               </Link>
             </button>
-            <button className="btn btn-primary" type="button" onClick={toggleDarkMode}>Dark</button>
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={toggleDarkMode}
+            >
+              Dark
+            </button>
           </ul>
         </section>
       </header>
