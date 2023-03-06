@@ -5,7 +5,7 @@ import Header from "./header";
 function fazerPut(e, dadosPut, id) {
   e.preventDefault();
   console.log(dadosPut);
-  Put(dadosPut, id)
+  Put(dadosPut, id);
 }
 
 export default () => {
@@ -23,6 +23,14 @@ export default () => {
   const [username, setUsername] = useState("");
   const [birthday, setBirthday] = useState("");
   const [browserUserAgent, setBrowserUserAgent] = useState("");
+  const [kilograms, setKilograms] = useState("");
+  const [centimeters, setCentimeters] = useState("");
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+  const [bloodType, setBloodType] = useState("");
+  const [vehicle, setVehicle] = useState("");
+  const [domain, setDomain] = useState("");
+  const [occupation, setOccupation] = useState("");
 
   const dadosPut = {
     gender: gender,
@@ -38,6 +46,14 @@ export default () => {
     username: username,
     birthday: birthday,
     browserUserAgent: browserUserAgent,
+    kilograms: kilograms,
+    centimeters: centimeters,
+    latitude: latitude,
+    longitude: longitude,
+    bloodType: bloodType,
+    vehicle: vehicle,
+    domain: domain,
+    occupation: occupation,
   };
 
   return (
@@ -134,6 +150,54 @@ export default () => {
             type="text"
             placeholder="BrowserUserAgent"
             onChange={(e) => setBrowserUserAgent(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Kilograms"
+            onChange={(e) => setKilograms(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Centimeters"
+            onChange={(e) => setCentimeters(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Latitude"
+            onChange={(e) => setLatitude(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Longitude"
+            onChange={(e) => setLongitude(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="BloodType"
+            onChange={(e) => setBloodType(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Vehicle"
+            onChange={(e) => setVehicle(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Domain"
+            onChange={(e) => setDomain(e.target.value)}
+          />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Occupation"
+            onChange={(e) => setOccupation(e.target.value)}
           />
           <input className="btn" type="submit" value="Enviar" />
         </form>
