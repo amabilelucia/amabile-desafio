@@ -42,7 +42,7 @@ function corpo(object) {
       <td>{item.domain}</td>
       <td>{item.occupation}</td>
       <td>
-        <button type="submit" onClick={() => excluir(item.id)}>
+        <button className="btn" type="submit" onClick={() => excluir(item.id)}>
           excluir
         </button>
       </td>
@@ -77,7 +77,7 @@ class Table extends React.Component {
     return (
       <div>
         <Header></Header>
-        <div>
+        <div style={{overflowX: 'auto'}}>
           <button className="btn" type="button">
             <Link to="/create" className="text-link">
               Novo Dado

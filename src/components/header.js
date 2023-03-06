@@ -34,7 +34,7 @@ export default () => {
               type="button"
               onClick={toggleDarkMode}
             >
-              Dark
+              Alterar Tema
             </button>
           </ul>
         </section>
